@@ -1,0 +1,27 @@
+package com.contentserver.demo.controllers;
+
+import com.contentserver.demo.data.Topic;
+import com.contentserver.demo.services.TopicService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import java.util.Arrays;
+import java.util.List;
+
+@RestController
+public class HomeController {
+    @Autowired
+    private TopicService topicService;
+
+    @RequestMapping("/topics")
+    public List<Topic> getAllTopics() {
+        return topicService.getAllTopics();
+    }
+
+    @RequestMapping("/topic")
+    public Topic getTopicById() {
+        return topicService.getTopic(1);
+    }
+}
