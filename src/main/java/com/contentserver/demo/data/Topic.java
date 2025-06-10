@@ -13,15 +13,7 @@ public class Topic {
         return topicName;
     }
 
-    public void setTopicName(String topicName) {
-        this.topicName = topicName;
-    }
-
     public int getTopicId() {
         return topicId;
-    }
-
-    public void setTopicId(int topicId) {
-        this.topicId = topicId;
     }
 }
