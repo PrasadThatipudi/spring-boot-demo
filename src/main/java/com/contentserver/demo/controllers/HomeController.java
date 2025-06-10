@@ -23,7 +23,7 @@ public class HomeController {
     }
 
     @RequestMapping(method = RequestMethod.POST,value = "/topics")
-    public boolean addTopic(@RequestBody Topic topic) {
+    public Topic addTopic(@RequestBody Topic topic) {
         return topicService.addTopic(topic);
     }
 

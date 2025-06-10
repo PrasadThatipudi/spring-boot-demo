@@ -26,8 +26,8 @@ public class TopicService {
                 .orElse(null);
     }
 
-    public boolean addTopic(Topic topic) {
-        return topicList.add(topic);
+    public Topic addTopic(Topic topic) {
+        return topicList.add(topic) ? topic : null;
     }
 
     public Topic updateTopic(int id, Topic newTopic) {
