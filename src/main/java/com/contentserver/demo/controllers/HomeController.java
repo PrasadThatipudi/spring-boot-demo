@@ -31,4 +31,9 @@ public class HomeController {
     public Topic updateTopic(@PathVariable("id") int id, @RequestBody Topic newTopic) {
         return topicService.updateTopic(id, newTopic);
     }
+
+    @RequestMapping(method = RequestMethod.DELETE, value = "/topics/{id}")
+    public Topic deleteTopic(@PathVariable("id") int id) {
+        return topicService.deleteTopic(id);
+    }
 }

@@ -41,4 +41,10 @@ public class TopicService {
 
         return null;
     }
+
+    public Topic deleteTopic(int id) {
+        Topic targetTopic = getTopic(id);
+
+        return topicList.remove(targetTopic) ? targetTopic : null;
+    }
 }
