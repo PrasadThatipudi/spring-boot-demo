@@ -9,6 +9,11 @@ public class Topic {
         this.topicName = topicName;
     }
 
+    @Override
+    public String toString() {
+        return "Topic [topicName=" + topicName + ", topicId=" + topicId + "]";
+    }
+
     public String getTopicName() {
         return topicName;
     }

@@ -26,4 +26,9 @@ public class HomeController {
     public boolean addTopic(@RequestBody Topic topic) {
         return topicService.addTopic(topic);
     }
+
+    @RequestMapping(method = RequestMethod.PATCH,value = "/topics/{id}")
+    public Topic updateTopic(@PathVariable("id") int id, @RequestBody Topic newTopic) {
+        return topicService.updateTopic(id, newTopic);
+    }
 }

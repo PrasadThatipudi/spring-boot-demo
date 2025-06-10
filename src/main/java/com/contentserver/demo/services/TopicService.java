@@ -20,10 +20,25 @@ public class TopicService {
     }
 
     public Topic getTopic (int id) {
-        return topicList.stream().filter(topic -> topic.getTopicId() == id).findFirst().orElse(null);
+        return topicList.stream().
+                filter(topic -> topic.getTopicId() == id)
+                .findFirst()
+                .orElse(null);
     }
 
     public boolean addTopic(Topic topic) {
         return topicList.add(topic);
+    }
+
+    public Topic updateTopic(int id, Topic newTopic) {
+        Topic targetTopic = getTopic(id);
+
+        if (targetTopic != null) {
+            topicList.set(topicList.indexOf(targetTopic), newTopic);
+
+            return targetTopic;
+        }
+
+        return null;
     }
 }
